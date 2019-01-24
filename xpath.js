@@ -17,17 +17,16 @@ xml_in.onkeyup = function(){
   children.innerText = xmldoc.documentElement.firstElementChild.tagName;
 };
 
-let result;
-
 xpath_in.onkeyup = function(){
   //console.log(this.value);
-  xmldoc = parser.parseFromString(this.value, 'text/xml');
-  nodes = xmldoc.evaluate(xpath, xmldoc, null, XPathResult.ANY_TYPE, null);
-   result = nodes.iterateNext();
-   while (result) {
-     // do something with result...
+  const nodes = xmldoc.evaluate(this.value, xmldoc, null, XPathResult.ANY_TYPE, null);
+  let result = nodes.iterateNext();
+  let str = '';
+  while (result) {
+    str += new XMLSerializer().serializeToString(result) + " ";
     result = nodes.iterateNext();
   }
-  str = new XMLSerializer().serializeToString(xmldoc);
+
+  xpath_out.innerText = str;
 
 };
