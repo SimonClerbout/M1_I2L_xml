@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <style media="screen">
+    * { width : 100%; resize : none;}
+  </style>
+  <title>JE SAIS LIRE</title>
+</head>
+
+
+<body>
+  <h1>XPath - JS</h1>
+  <hr>
+
+  <h2>Document XML</h2>
+  <textarea id="demo"></textarea>
+  <h2>Inspection rapide</h2>
+  <p>Le document traite de ...</p>
+
+  <script>
+    const demo = documentquerySelector("#demo")
+    demo.onkeyup = function(){
+
+      console.log(this.value);
+    };
+  </script>
+</body>
+
+</html>
