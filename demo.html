@@ -5,28 +5,28 @@
 <head>
   <meta charset="utf-8">
   <style media="screen">
-    * { width : 100%; resize : none;}
+    * { font-family: sans-serif;}
+    textarea { width : 100%; resize : none;}
+    span { background : #ddd; padding : .5em;}
   </style>
   <title>JE SAIS LIRE</title>
 </head>
-
 
 <body>
   <h1>XPath - JS</h1>
   <hr>
 
   <h2>Document XML</h2>
-  <textarea id="demo"></textarea>
+  <textarea id="xml_in" rows="5"></textarea>
   <h2>Inspection rapide</h2>
-  <p>Le document traite de ...</p>
+  <p>Le document traite de <span id="about"></span>.</p>
+  <p>Il contient <span id="content"></span> <span id="children"></span>.</p>
 
-  <script>
-    const demo = documentquerySelector("#demo")
-    demo.onkeyup = function(){
-
-      console.log(this.value);
-    };
-  </script>
+  <h2>Expressions XPath</h2>
+  <textarea id="xpath_in" rows="1"></textarea>
+  <h2>Résultat</h2>
+  <textarea id="xpath_out" rows="1"></textarea>
+  <script src="xpath.js"></script>
 </body>
 
 </html>
